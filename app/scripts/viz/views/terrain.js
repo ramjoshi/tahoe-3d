@@ -54,7 +54,7 @@ define([
         wireframe: true
       });*/
       this._terrainMaterial = new THREE.MeshPhongMaterial({
-        map: THREE.ImageUtils.loadTexture('images/dembathy_texture.png')
+        map: THREE.ImageUtils.loadTexture('images/dembathy_texture.jpg')
       });
     },
 
