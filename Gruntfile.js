@@ -162,14 +162,10 @@ module.exports = function (grunt) {
             dist: {
                 // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
                 options: {
-                    baseUrl: '<%= yeoman.app %>/scripts',
+                    baseUrl: '<%= yeoman.app %>',
+                    mainConfigFile: '<%= yeoman.app %>/scripts/main.js',
+                    name: 'scripts/main',
                     optimize: 'none',
-                    paths: {
-                        'templates': '../../.tmp/scripts/templates',
-                        'jquery': '../../app/bower_components/jquery/jquery',
-                        'underscore': '../../app/bower_components/underscore/underscore',
-                        'backbone': '../../app/bower_components/backbone/backbone'
-                    },
                     // TODO: Figure out how to make sourcemaps work with grunt-usemin
                     // https://github.com/yeoman/grunt-usemin/issues/30
                     //generateSourceMaps: true,
@@ -177,7 +173,6 @@ module.exports = function (grunt) {
                     // http://requirejs.org/docs/errors.html#sourcemapcomments
                     preserveLicenseComments: false,
                     useStrict: true,
-                    wrap: true
                     //uglify2: {} // https://github.com/mishoo/UglifyJS2
                 }
             }
@@ -246,8 +241,8 @@ module.exports = function (grunt) {
                     src: [
                         '*.{ico,txt}',
                         '.htaccess',
-                        'images/{,*/}*.{webp,gif}',
-                        'styles/fonts/{,*/}*.*',
+                        'images/{,*/}*.{webp,gif,png,bin}',
+                        'styles/fonts/{,*/}*.*'
                     ]
                 }]
             }
@@ -273,7 +268,7 @@ module.exports = function (grunt) {
                     src: [
                         '<%= yeoman.dist %>/scripts/{,*/}*.js',
                         '<%= yeoman.dist %>/styles/{,*/}*.css',
-                        '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
+                        '<%= yeoman.dist %>/images/{,*/}*.{jpg,jpeg,gif,webp}',
                         '/styles/fonts/{,*/}*.*',
                     ]
                 }
@@ -346,7 +341,7 @@ module.exports = function (grunt) {
         'jst',
         'useminPrepare',
         'requirejs',
-        'imagemin',
+        //'imagemin',
         'htmlmin',
         'concat',
         'cssmin',
