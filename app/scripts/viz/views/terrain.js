@@ -34,12 +34,11 @@ define([
       ThreeBaseView.prototype.initThree.apply(this, arguments);
 
       this._renderer.setClearColor(0x7BB5FF);
-      this._camera.position.set(0, -50, 10);
+      this._camera.position.set(0, -100, 50);
       this._controls = new THREE.TrackballControls(this._camera);
 
       this.initMaterials();
       this.initLighting();
-      this.initAxes();
     },
 
     onTerrainData: function(data) {
@@ -49,10 +48,6 @@ define([
     },
 
     initMaterials: function() {
-      /*this._terrainMaterial = new THREE.MeshPhongMaterial({
-        color: 0xdddddd,
-        wireframe: true
-      });*/
       this._terrainMaterial = new THREE.MeshPhongMaterial({
         map: THREE.ImageUtils.loadTexture('images/dembathy_texture.jpg')
       });
@@ -61,18 +56,13 @@ define([
     initLighting: function() {
 
       // White directional light at half intensity shining from the top.
-      var directionalLight = new THREE.DirectionalLight(0xffffff, 1.5);
-      directionalLight.position.set(-50, 0, 50);
+      var directionalLight = new THREE.DirectionalLight(0xffffff, .1);
+      directionalLight.position.set(-25, 50, 50);
       this._scene.add(directionalLight);
 
       // ambient light
-      //this._ambientLight = new THREE.AmbientLight(0xeeeeee);
-      //this._scene.add(this._ambientLight);
-    },
-
-    initAxes: function() {
-      this._axes = new THREE.AxisHelper(200);
-      this._scene.add(this._axes);
+      this._ambientLight = new THREE.AmbientLight(0xffffff, 0.25);
+      this._scene.add(this._ambientLight);
     },
 
     initGeometries: function() {
