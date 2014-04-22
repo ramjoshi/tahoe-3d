@@ -55,13 +55,8 @@ define([
 
     initLighting: function() {
 
-      // White directional light at half intensity shining from the top.
-      var directionalLight = new THREE.DirectionalLight(0xffffff, .1);
-      directionalLight.position.set(-25, 50, 50);
-      this._scene.add(directionalLight);
-
       // ambient light
-      this._ambientLight = new THREE.AmbientLight(0xffffff, 0.25);
+      this._ambientLight = new THREE.AmbientLight(0xffffff, 1);
       this._scene.add(this._ambientLight);
     },
 
