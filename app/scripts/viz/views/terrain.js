@@ -49,7 +49,7 @@ define([
 
     initMaterials: function() {
       this._terrainMaterial = new THREE.MeshPhongMaterial({
-        map: THREE.ImageUtils.loadTexture('images/dembathy_texture_old.png')
+        map: THREE.ImageUtils.loadTexture('images/20a43227.dembathy_texture_old.png')
       });
     },
 
