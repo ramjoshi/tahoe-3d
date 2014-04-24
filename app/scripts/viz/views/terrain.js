@@ -61,7 +61,7 @@ define([
     },
 
     initGeometries: function() {
-      this._terrainGeometry = new THREE.PlaneGeometry(100, 241, 174, 420);
+      this._terrainGeometry = new THREE.PlaneGeometry(100, 240, 174, 420);
       this._terrainGeometry.vertices =
         _.map(this._terrainGeometry.vertices, function(vertex, i) {
           vertex.z = this._terrainData[i] / 65535 * 9.449;
